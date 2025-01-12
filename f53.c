@@ -18,7 +18,7 @@ int main(){
      address(&n);
 
 }
-// call by value
+
 void address(int *n){
     printf("address=%d", n);
 }
