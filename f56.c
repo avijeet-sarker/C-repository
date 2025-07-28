@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 int isPrime(int num) {
     if (num < 2)
         return 0;
@@ -28,22 +29,26 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-
+    
     arr = (int *)malloc(n * sizeof(int));
     if (arr == NULL) {
         printf("Memory allocation failed!\n");
         return 1;
-
+    }
     printf("Enter %d elements:\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
+    
     int primeSum = sumOfPrimes(arr, n);
     printf("Sum of prime elements: %d\n", primeSum);
 
-    free(arr);
     
+    free(arr);
+
     return 0;
 }
+
+
 
