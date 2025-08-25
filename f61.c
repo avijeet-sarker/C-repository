@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 #define MAX 100
 
@@ -15,7 +15,7 @@ void readSparseMatrix(int mat[MAX][MAX], int *rows, int *cols) {
 }
 
 int convertToTuple(int mat[MAX][MAX], int rows, int cols, int tuple[MAX][3]) {
-    int k = 1; // Index starts from 1 (0th row stores metadata)
+    int k = 1; 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             if (mat[i][j] != 0) {
@@ -28,14 +28,14 @@ int convertToTuple(int mat[MAX][MAX], int rows, int cols, int tuple[MAX][3]) {
     }
     tuple[0][0] = rows;
     tuple[0][1] = cols;
-    tuple[0][2] = k - 1; // number of non-zero elements
+    tuple[0][2] = k - 1; 
     return k;
 }
 
 void transposeTuple(int tuple[MAX][3], int trans[MAX][3]) {
-    int n = tuple[0][2]; // number of non-zero elements
-    trans[0][0] = tuple[0][1]; // new rows = original columns
-    trans[0][1] = tuple[0][0]; // new columns = original rows
+    int n = tuple[0][2]; 
+    trans[0][0] = tuple[0][1]; 
+    trans[0][1] = tuple[0][0]; 
     trans[0][2] = n;
 
     int k = 1;
